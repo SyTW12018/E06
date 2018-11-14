@@ -1,4 +1,4 @@
-# grupo E06
+# Grupo E06
 Proyecto Sistemas y Tecnologías Web.
 * Sara Pérez Rodríguez
 * Ayrton Crespo García
