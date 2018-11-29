@@ -1,6 +1,7 @@
 
 //Archivo de configuración para convertir todo el código de vue.js a javascript
 //debido a que no entiende el código en vuejs por eso lo convierte en javascript
+var path = require('path');
 
 const { VueLoaderPlugin } = require('vue-loader');
 
