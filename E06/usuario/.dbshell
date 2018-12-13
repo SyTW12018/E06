@@ -1,0 +1,22 @@
+show dbs
+use mevn-proyecto
+show collections
+db.users.find()
+db.users.find().pretty()
+db.users.find()
+db.users.find().pretty()
+show dbs
+use mevn-proyecto
+show collections
+db.users.find().pretty()
+eexit
+show dbs
+use mevn-proyecto
+show collections
+db.users.find().pretty()
+show dbs
+use mevn-proyecto
+show collections
+dbs.users.pretty
+db.users.pretty()
+db.users.find().pretty()
