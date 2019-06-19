@@ -7,12 +7,19 @@ const path = require("path")
 
 const app = express();
 
+app.use(cors({
+	origin: true,
+	credentials: true
+}));
+
 app.use(express.static(path.join(__dirname, '/dist')))
 app.get(/.*/, function (req, res) {
 	res.sendFile(path.join(__dirname, '/dist'));
 })
 
+// mongoose.connect('mongodb://asa:sytw19@ds239157.mlab.com:39157/mevn-proyecto', {
 mongoose.connect('mongodb://localhost/mevn-proyecto', {
+
 		useNewUrlParser: true
 	})
 	.then(db => console.log('DB is connected'))
@@ -30,8 +37,7 @@ app.use(bodyParser.urlencoded({
 
 //Routes
 app.use('/users', require('./routes/users.js'));
-
-
+app.use('/juegos', require('./routes/juegos.js'));
 
 //Static files
 

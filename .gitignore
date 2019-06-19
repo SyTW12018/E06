@@ -75,3 +75,6 @@ client/*.suo
 client/*.ntvs*
 client/*.njsproj
 client/*.sln
+
+
+server/dist/
