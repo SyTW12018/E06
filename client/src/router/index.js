@@ -44,7 +44,7 @@ export default new Router({
       component: Profile
     },
     {
-      path: '/recommend',
+      path: '/reco',
       name: 'Recomendacion',
       component: Recommend
     },

@@ -18,14 +18,17 @@
         <h4 class="card-title">
           <b>{{ juego.titulo }}</b>
         </h4>
-        <h5 class="card-text">Categoría: {{ juego.categoria }}</h5>
+        <h6 class="card-text">
+          <b>Categoría:</b>
+          {{ juego.categoria }}
+        </h6>
         <p class="card-text"></p>
         <div class="text-center">
           <router-link
-            class="nav-link"
+            class="nav-link btn"
             tag="button"
             :to="{ name: 'ficha', params: {id: juego._id } }"
-          >Ficha</router-link>
+          >Ver Ficha</router-link>
         </div>
       </div>
     </div>
@@ -72,19 +75,32 @@ export default {
 
 
 <style>
-.text-center > .btn.btn-primary {
-  border-radius: 15px;
-  background-color: #dd2342;
+.text-center {
+  text-align: center;
+}
+.text-center > .btn {
+  border-radius: 13px;
+  /* background-color: #dd2342; */
   color: white;
-  border-color: #dd2342;
+  /* border-color: #dd2342; */
+  border-color: transparent;
+  font-size: 1.1em;
+  background-color: #d18fb5; /* For browsers that do not support gradients */
+  /* background-image: linear-gradient(to right, #ea8d8d, #b7a3f1); */
+}
+
+.nav-link.btn {
+  display: initial;
 }
 
 .inline {
   display: inline-block;
 }
-.text-center > .btn.btn-primary:hover {
-  background-color: #af1b34;
-  border-color: #af1b34;
+.text-center > .btn:hover {
+  /* background-color: #af1b34;
+  border-color: #af1b34; */
+  background-color: #ea8d8d; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #c87878, #937dd3);
 }
 
 .container > .row {
@@ -115,5 +131,9 @@ export default {
 
 .card-body > .card-title {
   text-transform: uppercase;
+}
+
+.card-text {
+  text-transform: capitalize;
 }
 </style>

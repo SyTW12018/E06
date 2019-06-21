@@ -44,7 +44,7 @@
               placeholder="Introduce una contraseña"
             >
           </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Crear cuenta</button>
+          <button class="btn btn-lg btn-block" type="submit">Crear cuenta</button>
         </form>
       </div>
     </div>

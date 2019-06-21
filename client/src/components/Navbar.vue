@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger rounded">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <button
       class="navbar-toggler"
       type="button"
@@ -15,26 +15,26 @@
     <div class="collapse navbar-collapse justify-content-md-center" id="navbar1">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link class="nav-link text-white" to="/">Inicio</router-link>
+          <router-link class="nav-link text-dark" to="/">Inicio</router-link>
         </li>
         <li v-if="auth==''" class="nav-item">
-          <router-link class="nav-link text-white" to="/login">Acceso</router-link>
+          <router-link class="nav-link text-dark" to="/login">Acceso</router-link>
         </li>
         <li v-if="auth==''" class="nav-item">
-          <router-link class="nav-link text-white" to="/register">Registro</router-link>
+          <router-link class="nav-link text-dark" to="/register">Registro</router-link>
         </li>
         <li v-if="auth=='loggedin'" class="nav-item">
-          <router-link class="nav-link text-white" to="/profile">Perfil</router-link>
+          <router-link class="nav-link text-dark" to="/profile">Perfil</router-link>
         </li>
         <li v-if="auth=='loggedin'" class="nav-item">
-          <router-link class="nav-link text-white" to="/recommend">Recomendaciones</router-link>
+          <router-link class="nav-link text-dark" to="/reco">Recomendaciones</router-link>
         </li>
-        <li v-if="auth=='loggedin'" class="nav-item">
-          <router-link class="nav-link text-white" to="/juegos">Todos los juegos</router-link>
+        <li class="nav-item">
+          <router-link class="nav-link text-dark" to="/juegos">Todos los juegos</router-link>
         </li>
 
         <li v-if="auth=='loggedin'" class="nav-item">
-          <a class="nav-link text-white" href v-on:click="logout">Salir</a>
+          <a class="nav-link text-dark" href v-on:click="logout">Salir</a>
         </li>
       </ul>
     </div>
@@ -69,3 +69,21 @@ export default {
   }
 };
 </script>
+
+
+<style>
+.navbar.navbar-expand-lg.navbar-dark {
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(107, 104, 107, 1);
+  -moz-box-shadow: 0px 1px 8px 0px rgba(107, 104, 107, 1);
+  box-shadow: 0px 1px 8px 0px rgba(107, 104, 107, 1);
+  background-color: #ea8d8d; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #ea8d8d, #a890f3);
+}
+
+.nav-item > .nav-link.text-dark {
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white !important;
+  font-size: 1em;
+}
+</style>

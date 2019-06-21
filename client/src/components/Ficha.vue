@@ -17,9 +17,18 @@
                 </tr>
               </tbody>
             </table>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">
+            <div v-if="!jugado" class="text-center">
+              <a
+                v-on:click="ha_jugado()"
+                class="btn btn-primary text-light { pointer-events: none; }"
+              >
                 <i class="fas fa-plus"></i> Marcar como jugado
+              </a>
+            </div>
+            <div v-if="jugado" class="text-center">
+              <a href="#" class="btn btn-primary disabled">
+                <i class="fas fa-check-circle"></i>
+                Ya has jugado este juego
               </a>
             </div>
           </div>
@@ -48,23 +57,69 @@ import EventBus from "./EventBus";
 export default {
   data() {
     return {
-      juego: []
+      juego: [],
+      jugado: false
     };
   },
   created() {
+    const token = localStorage.usertoken;
+    const decoded = jwtDecode(token);
+
+    // Obtener la ficha del juego
     let uri = `juegos/ficha/${this.$route.params.id}`;
     this.axios.get(uri).then(response => {
       this.juego = response.data;
+
+      // Esta petición debe hacerse después pq si no el
+      this.axios
+        .post("jugados/consulta", {
+          email: decoded.email,
+          titulo: this.juego.titulo
+        })
+        .then(res => {
+          // console.log(res.data);
+          this.jugado = res.data;
+        });
     });
+
+    // Comprobar si lo ha jugado o no el usuario del token
+  },
+  methods: {
+    ha_jugado() {
+      const token = localStorage.usertoken;
+      const decoded = jwtDecode(token);
+      this.axios
+        .post("jugados/add", {
+          email: decoded.email,
+          titulo: this.juego.titulo,
+          categoria: this.juego.categoria
+        })
+        .then(res => {
+          // router.push({ name: "Login" });
+          this.jugado = true;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 };
 </script>
 
 
 <style>
+.a.disabled {
+  pointer-events: none;
+}
+.card-img-top {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
 .card-body.fichajuego > .caption {
-  background-color: #dd2342;
+  background-color: #d18fb5;
   color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   padding: 15px;
 }
 
@@ -72,6 +127,7 @@ export default {
   width: 250px;
   margin: 10px;
   display: inline-block;
+  border-radius: 30px;
 }
 
 .centrado {
