@@ -4,9 +4,12 @@
       <h1 class="col-lg-9 col-md-6 col-xs-6">Juegos</h1>
       <select v-model="category" class="col-lg-3 col-md-6 col-xs-6 custom-select custom-select-md">
         <option value disabled selected>Elige una categoría</option>
-        <option value="violencia">Violencia</option>
+        <option value="acción">Acción</option>
         <option value="aventura">Aventura</option>
-        <option value="simulador">Simulador</option>
+        <option value="mundo abierto">Mundo abierto</option>
+        <option value="supervivencia">Supervivencia</option>
+        <option value="survival horror">Survival Horror</option>
+
         <option style="background-color: lightgrey; color: grey;" value>Eliminar filtros</option>
       </select>
     </div>
@@ -131,6 +134,7 @@ export default {
 
 .card-body > .card-title {
   text-transform: uppercase;
+  font-size: 1em;
 }
 
 .card-text {

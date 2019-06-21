@@ -58,7 +58,7 @@ export default {
           password: this.password
         })
         .then(res => {
-          console.log(res.data.error);
+          // console.log(res.data.error);
 
           // Si la contraseña o el emain es incorrecta
           if (res.data.error !== undefined) {
@@ -73,7 +73,7 @@ export default {
           }
         })
         .catch(err => {
-          console.log("hola");
+          // console.log("hola");
           // router.push({ name: "Login" });
         });
       this.emitMethod();

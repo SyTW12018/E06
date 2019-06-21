@@ -63,7 +63,10 @@ export default {
   },
   created() {
     const token = localStorage.usertoken;
-    const decoded = jwtDecode(token);
+    if (token != undefined) {
+      var decode = jwtDecode(token);
+    }
+    const decoded = decode;
 
     // Obtener la ficha del juego
     let uri = `juegos/ficha/${this.$route.params.id}`;
@@ -77,7 +80,7 @@ export default {
           titulo: this.juego.titulo
         })
         .then(res => {
-          // console.log(res.data);
+          console.log(res.data);
           this.jugado = res.data;
         });
     });
