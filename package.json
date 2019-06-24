@@ -20,7 +20,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "nodemon server/server.js"
+    "dev": "nodemon server/server.js",
+    "test": "cd client && mocha"
   },
   "author": "",
   "license": "ISC"
