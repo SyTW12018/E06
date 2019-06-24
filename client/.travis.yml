@@ -1,10 +1,22 @@
-sudo: false
+# sudo: false
+# language: node_js
+# nodejs:
+#   - node
+
+# before_install:
+#   - npm i
+
+# cache: npm
+
+# install:
+#   - npm ci
+
+# script: 
+#   - npm test
+
 language: node_js
-nodejs:
-  - node
-
-install:
-  - npm ci
-
-script: 
-  - npm test
+node_js: 
+  - "stable"
+cache:
+  directories:
+    - "node_modules"
