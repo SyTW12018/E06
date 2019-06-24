@@ -17,9 +17,6 @@ app.get(/.*/, function (req, res) {
 	res.sendFile(path.join(__dirname, '/dist'));
 })
 
-app.get('/', (req, res) => {
-	res.send('ci with travis');
-});
 
 // mongoose.connect('mongodb://asa:sytw19@ds239157.mlab.com:39157/mevn-proyecto', {
 mongoose.connect('mongodb://localhost/mevn-proyecto', {
