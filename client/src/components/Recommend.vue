@@ -2,16 +2,19 @@
   <div class="container">
     <div class="row">
       <h1 class="col-lg-9 col-md-6 col-xs-6">Tus recomendaciones</h1>
-      <select v-model="category" class="col-lg-3 col-md-6 col-xs-6 custom-select custom-select-md">
+      <!-- <select v-model="category" class="col-lg-3 col-md-6 col-xs-6 custom-select custom-select-md">
         <option value disabled selected>Elige una categoría</option>
-        <option value="violencia">Violencia</option>
+        <option value="acción">Acción</option>
         <option value="aventura">Aventura</option>
-        <option value="simulador">Simulador</option>
+        <option value="mundo abierto">Mundo abierto</option>
+        <option value="supervivencia">Supervivencia</option>
+        <option value="survival horror">Survival Horror</option>
+
         <option style="background-color: lightgrey; color: grey;" value>Eliminar filtros</option>
-      </select>
+      </select>-->
     </div>
 
-    <div v-for="juego in juegosFiltro" :key="juego._id" class="card fichajuego">
+    <div v-for="juego in juegos" :key="juego._id" class="card fichajuego">
       <img src="../img/download.jpg" class="card-img-top">
       <!-- <img :src="juego.foto"> -->
       <div class="card-body">
@@ -55,6 +58,20 @@ export default {
     this.axios.get(uri).then(response => {
       this.juegos = response.data;
     });
+
+    let uri2 = "/juegos/recomendados";
+
+    this.axios.get(uri2).then(res => {
+      console.log("hola");
+      this.juegos = res.data;
+    });
+
+    // let uri = "/jugados/recomendados";
+    // // console.log("aqui");
+    // this.axios.get(uri).then(response => {
+    //   this.juegos = response.data;
+    //   // console.log(this.juegos);
+    // });
   },
   computed: {
     juegosFiltro: function() {
@@ -71,6 +88,49 @@ export default {
     }
   }
 };
+
+// export default {
+//   data() {
+//     return {
+//       juegos: [],
+//       category: "",
+//       fileName: "download.jpg"
+//     };
+//   },
+//   created() {
+//     const token = localStorage.usertoken;
+//     const decoded = jwtDecode(token);
+
+//     this.axios.get("juegos/nojugados").then(response => {
+//       this.juegos = response.data;
+//     });
+//     // this.axios
+//     //   .get("juegos/nojugados", {
+//     //     email: decoded.email
+//     //   })
+//     //   .then(res => {
+//     //     console.log(res.data);
+//     //     this.juegos = res.data;
+//     //   })
+//     //   .catch(err => {
+//     //     console.log(err);
+//     //   });
+//   },
+//   computed: {
+//     juegosFiltro: function() {
+//       var vm = this;
+//       var categoria = vm.category;
+
+//       if (categoria === "") {
+//         return vm.juegos;
+//       } else {
+//         return vm.juegos.filter(function(juego) {
+//           return juego.categoria === categoria;
+//         });
+//       }
+//     }
+//   }
+// };
 </script>
 
 
@@ -124,7 +184,7 @@ export default {
 }
 
 .fichajuego {
-  width: 250px;
+  width: 240px;
   margin: 10px;
   display: inline-block;
 }
@@ -137,3 +197,4 @@ export default {
   text-transform: capitalize;
 }
 </style>
+

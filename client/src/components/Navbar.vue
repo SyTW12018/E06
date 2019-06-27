@@ -44,9 +44,9 @@
 <script>
 import EventBus from "./EventBus";
 
-EventBus.$on("logged-in", test => {
-  console.log(test);
-});
+// EventBus.$on("logged-in", test => {
+//   console.log(test);
+// });
 
 export default {
   data() {
@@ -65,7 +65,10 @@ export default {
   mounted() {
     EventBus.$on("logged-in", status => {
       this.auth = status;
+      console.log(this.auth);
     });
+    // Para que cuando se desconecte sin logout se borre el token, y no aparezca la info
+    if (this.auth == "") localStorage.removeItem("usertoken");
   }
 };
 </script>

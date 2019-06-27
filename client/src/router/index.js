@@ -19,6 +19,7 @@ import Profile from '@/components/Profile'
 import Recommend from '@/components/Recommend'
 import Juegos from '@/components/Juegos'
 import Ficha from '@/components/Ficha'
+import Ficha2 from '@/components/Ficha2'
 
 Vue.use(Router)
 
@@ -57,6 +58,11 @@ export default new Router({
       path: '/ficha/:id',
       name: 'ficha',
       component: Ficha
+    },
+    {
+      path: '/fichajugados/:id',
+      name: 'fichajugados',
+      component: Ficha2
     }
   ]
 })

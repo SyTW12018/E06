@@ -117,17 +117,13 @@ export default {
 .container {
   margin-bottom: 100px;
 }
-/* .listado {
-  display: inline;
-  text-align: center;
-} */
 
 .listado > div {
   display: inline-block;
 }
 
 .fichajuego {
-  width: 250px;
+  width: 240px;
   margin: 10px;
   display: inline-block;
 }

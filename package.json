@@ -22,7 +22,7 @@
   "scripts": {
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
-    "test": "cd client && mocha"
+    "test": "cd client && mocha --exit"
   },
   "author": "",
   "license": "ISC"

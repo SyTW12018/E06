@@ -45,6 +45,8 @@ app.use('/jugados', require('./routes/jugados.js'));
 //Static files
 
 //Server is listening 
-app.listen(app.get('port'), () => {
+const server = app.listen(app.get('port'), () => {
 	console.log('Server is running on port', app.get('port'));
 });
+
+module.exports = server

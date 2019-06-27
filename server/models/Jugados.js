@@ -10,8 +10,13 @@ const JugadosSchema = new Schema({
     },
     categoria: {
         type: String,
+        required: true
     },
     fecha: {
+        type: String,
+        required: true
+    },
+    dia: {
         type: Date,
         default: Date.now
     }

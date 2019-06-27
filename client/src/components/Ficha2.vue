@@ -69,23 +69,22 @@ export default {
     const decoded = decode;
 
     // Obtener la ficha del juego
-    let uri = `juegos/ficha/${this.$route.params.id}`;
+    let uri = `jugados/fichajugados/${this.$route.params.id}`;
     this.axios.get(uri).then(response => {
       this.juego = response.data;
-      if (token != undefined) {
-        // Esta petición debe hacerse después pq si no el
-        this.axios
-          .post("jugados/consulta", {
-            email: decoded.email,
-            titulo: this.juego.titulo,
-            categoria: this.juego.categoria,
-            fecha: this.juego.fecha
-          })
-          .then(res => {
-            console.log(res.data);
-            this.jugado = res.data;
-          });
-      }
+
+      // Esta petición debe hacerse después pq si no el
+      this.axios
+        .post("jugados/consulta", {
+          email: decoded.email,
+          titulo: this.juego.titulo,
+          categoria: this.juego.categoria,
+          fecha: this.juego.fecha
+        })
+        .then(res => {
+          console.log(res.data);
+          this.jugado = res.data;
+        });
     });
 
     // Comprobar si lo ha jugado o no el usuario del token
@@ -102,7 +101,6 @@ export default {
           fecha: this.juego.fecha
         })
         .then(res => {
-          // router.push({ name: "Login" });
           this.jugado = true;
         })
         .catch(err => {

@@ -1,23 +1,24 @@
-body{
+body {
   .background-image {
-               background-image: url(http://www.fondos10.net/wp-content/uploads/images/fondos10.net-3d-832.jpg) ;
-       
-              background-size: cover;
-              display: block;
+    background-image: url(http://www.fondos10.net/wp-content/uploads/images/fondos10.net-3d-832.jpg);
 
-              filter: blur(10px) contrast(30%);
+    background-size: cover;
+    display: block;
 
-              height: 100%;
-              width: 100%;
-              left: 0;
-              position: fixed;
-              right: 0;
-              z-index: 1;
-          }
-          .content {
-            left: 0;
-            position: fixed;
-            right: 0;
-            z-index: 2;
-        }
+    filter: blur(10px) contrast(30%);
+
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+  }
+
+  .content {
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 2;
+  }
 }
