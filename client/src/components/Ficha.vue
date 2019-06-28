@@ -115,6 +115,10 @@ export default {
 
 
 <style>
+.card.mt-5.largo > h3 {
+  font-family: "Bangers", cursive;
+  font-size: 2.2em;
+}
 .a.disabled {
   pointer-events: none;
 }
@@ -145,9 +149,13 @@ export default {
 
 tbody > tr > th {
   /* color: red; */
-  font-size: 1.5em;
+  font-family: "Cuprum", sans-serif;
+  font-size: 1.6em;
+  font-weight: bold;
 }
 tbody > tr > td {
+  font-family: "Cuprum", sans-serif;
+
   font-size: 1.2em;
   text-transform: capitalize;
 }

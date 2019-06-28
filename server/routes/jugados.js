@@ -70,120 +70,36 @@ jugados.post('/consulta', (req, res) => {
             res.send('error: ' + err)
         })
 })
-// A MEDIAS: Busco la forma de pasarle esos dos valores Bioshok y gta a la nueva busuqeda en Juegos, para buscar los valores distintos a ellos (LOS QUE NO JA JUGADO). 
+
+
 jugados.post('/recomendados', (req, res) => {
-    console.log("hola que tals");
+    var usuario = req.body.email;
+    var vals;
+    var array = [];
 
-    // let usuario = req.body.email;
-    var vals = "";
     Jugados.find({
-        usuario: "123@123"
-    }, function (err, result) {
-        if (err) throw err;
-        vals = result;
-        console.log(vals.name);
-        Juegos.find({
-                _id: {
-                    $nin: vals
-                }
-            }),
-            function (err, juego) {
-                console.log("juego");
-                if (err) {
-                    res.json(err);
-                } else {
-                    res.json(vals);
-                }
+            usuario: usuario
+        },
+        function (err, result) {
+            if (err) throw err;
+            else vals = result;
+            for (i = 0; i < vals.length; i++) {
+                array.push(vals[i].titulo);
             }
-    });
-
-    // console.log(vals);
-    Juegos.find({
-            _id: {
-                $nin: vals
-            }
-        }),
-        function (err, juego) {
-            // console.log("juego");
-            if (err) {
-                res.json(err);
-            } else {
-                res.json(vals);
-            }
-        }
+            Juegos.find({
+                    titulo: {
+                        $nin: array
+                    }
+                },
+                function (err, resultado) {
+                    if (err) {
+                        res.json(err);
+                    } else {
+                        res.json(resultado);
+                    }
+                });
+        });
 });
-
-// Jugados.find({
-//     usuario: "123@123"
-// }, function (err, juego) {
-//     if (err) {
-//         res.json(err);
-//     } else {
-//         res.json(juego);
-//     }
-// });
-
-
-// Jugados.find({}, {
-//     usuario: "123@123"
-// }).map(function (a) {
-//     console.log(a.titulo);
-// })
-
-
-// Jugados.find({
-//     usuario: "123@123"
-// }).map(function (a) {
-//     return a._id;
-// });
-
-// // console.log(uno);
-// Jugados.findOne({
-//         usuario: req.body.email,
-//     }).then(user => {
-//         if (user) {
-//             res.send(true);
-//         } else {
-//             res.send(false);
-//         }
-//     })
-//     .catch(err => {
-//         res.send('error: ' + err)
-//     })
-
-
-
-// jugados.route('/recomendados').post(function (req, res) {
-//     // let email = req.body.email;
-//     // console.log("goma");
-//     // var uno = Jugados.find({}, {
-//     //     usuario: email
-//     // }).map(function (a) {
-//     //     return a.titulo;
-//     // });
-//     // console.log("chasis");
-//     // console.log(uno);
-//     let usuario = req.body.email;
-
-//     Jugados.find({
-//         usuario: usuario
-//     }, function (err, juego) {
-//         if (err) {
-//             res.json(err);
-//         } else {
-//             res.json(juego);
-
-//         }
-//     });
-// })
-
-
-
-
-// function (err, juego) {
-//     if (err) res.json(err);
-//     else res.json(juego);
-// });
 
 
 

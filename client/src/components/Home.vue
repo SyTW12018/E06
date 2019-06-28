@@ -17,7 +17,7 @@
           <router-link class="nav-link btn" to="/login">
             <button class="btn btn-lg btn-block">Accede a tu cuenta</button>
           </router-link>
-          <router-link class="nav-link btn" to="/login">
+          <router-link class="nav-link btn" to="/register">
             <button class="btn btn-lg btn-block">Crea una cuenta</button>
           </router-link>
         </div>
@@ -28,6 +28,10 @@
 
 <style>
 .full > .container > .row {
+  margin-bottom: 0px;
+}
+
+.full > .container {
   margin-bottom: 0px;
 }
 
