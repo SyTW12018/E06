@@ -45,6 +45,63 @@
         </div>
       </div>
     </div>
+    <h4>Comentarios</h4>
+    <div v-if="loggin" class="card bg-light mt-3 mb-3">
+      <div class="card-body">
+        <form v-on:submit.prevent="enviar">
+          <div class="form-group">
+            <label class="d-inline" for="comment"></label>
+            <label class="sr-only" for="inlineFormInputName2">Name</label>
+
+            <div class="form-group row">
+              <div class="col-xs-4 col-lg-3">
+                <input
+                  class="form-control"
+                  id="ex1"
+                  type="number"
+                  placeholder="Valora este juego del 0-10"
+                  maxlength="2"
+                  min="0"
+                  max="10"
+                  name="puntuacion"
+                  v-model="puntuacion"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <textarea
+                class="form-control"
+                v-model="contenido"
+                name="contenido"
+                rows="1"
+                aria-label="With textarea"
+                placeholder="Añade un comentario sobre este juego"
+                required
+              ></textarea>
+              <div class="input-group-append">
+                <button class="btn btn-lg btn-block" type="submit">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mb-5">
+      <div class="mb-2" v-for="coment in comentarios" :key="coment._id">
+        <div id="comentario" class="card">
+          <div class="card-body ml-2">
+            <p class="card-title d-inline" style="text-transform: initial;">{{coment.contenido}}</p>&nbsp&nbsp
+            <b>&#8226;</b>&nbsp
+            <h5 class="card-text d-inline">{{coment.puntuacion}}</h5>
+          </div>
+          <div class="card-footer" style="padding: 3px; ">
+            <small class="text-muted ml-3">Publicado el {{coment.creado}} por {{coment.autor}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -58,7 +115,10 @@ export default {
   data() {
     return {
       juego: [],
-      jugado: false
+      jugado: false,
+      puntuacion: "",
+      contenido: "",
+      loggin: false
     };
   },
   created() {
@@ -102,6 +162,24 @@ export default {
         })
         .then(res => {
           this.jugado = true;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    enviar() {
+      const token = localStorage.usertoken;
+      const decoded = jwtDecode(token);
+      this.axios
+        .post("/comentarios/enviar", {
+          email: decoded.first_name,
+          titulo: this.juego.titulo,
+          puntuacion: this.puntuacion,
+          contenido: this.contenido
+        })
+        .then(res => {
+          console.log("Devuelto");
+          router.push(`/${this.$route.params.id}`);
         })
         .catch(err => {
           console.log(err);

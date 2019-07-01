@@ -17,7 +17,6 @@ app.get(/.*/, function (req, res) {
 	res.sendFile(path.join(__dirname, '/dist'));
 })
 
-
 // mongoose.connect('mongodb://asa:sytw19@ds239157.mlab.com:39157/mevn-proyecto', {
 mongoose.connect('mongodb://localhost/mevn-proyecto', {
 
@@ -40,6 +39,8 @@ app.use(bodyParser.urlencoded({
 app.use('/users', require('./routes/users.js'));
 app.use('/juegos', require('./routes/juegos.js'));
 app.use('/jugados', require('./routes/jugados.js'));
+app.use('/comentarios', require('./routes/comentarios.js'));
+
 
 
 //Static files
