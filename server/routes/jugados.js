@@ -6,25 +6,10 @@ const bcrypt = require('bcrypt');
 
 
 const Jugados = require('../models/Jugados');
-// const Juegos = require('../models/Juego');
+
 jugados.use(cors());
 
 process.env.SECRET_KEY = 'secret'
-
-// jugados.get('/', (req, res) => {
-//     var juegosjugados = [];
-//     Jugados.find({
-//             usuario: req.body.email
-//         }).then(juegos => {
-//             if (!err)
-//                 res.send(juegos)
-//             else
-//                 console.log(err);
-//         })
-//         .catch(err => {
-//             res.send('error: ' + err)
-//         })
-// })
 
 jugados.route('/:id').get(function (req, res) {
     let id = req.params.id;
@@ -82,41 +67,6 @@ jugados.post('/consulta', (req, res) => {
             res.send('error: ' + err)
         })
 })
-
-
-// jugados.route('/recomendados').post(function (req, res) {
-//     // let email = req.body.email;
-//     // console.log("goma");
-//     // var uno = Jugados.find({}, {
-//     //     usuario: email
-//     // }).map(function (a) {
-//     //     return a.titulo;
-//     // });
-//     // console.log("chasis");
-//     // console.log(uno);
-//     let usuario = req.body.email;
-
-//     Jugados.find({
-//         usuario: usuario
-//     }, function (err, juego) {
-//         if (err) {
-//             res.json(err);
-//         } else {
-//             res.json(juego);
-
-//         }
-//     });
-// })
-
-
-
-
-// function (err, juego) {
-//     if (err) res.json(err);
-//     else res.json(juego);
-// });
-
-
 
 // Añade el juego como jugado
 jugados.post('/add', (req, res) => {

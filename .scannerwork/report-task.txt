@@ -1,0 +1,5 @@
+projectKey=usuario
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/usuario
+ceTaskId=AWuz_RPMjDn2On2Pyfm0
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWuz_RPMjDn2On2Pyfm0
