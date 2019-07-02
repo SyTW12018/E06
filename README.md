@@ -48,8 +48,8 @@ usando _Javascript_.
 * **_Nodemon_**: Utilidad que monitoriza cualquier cambio y reinicia automáticamente el servidor.
 * **_Vue_**: Framework de _Javascript_ del lado del cliente.
 * **_Vue-cli_**: Sistema para el fácil y rápido desarrollo de _Vue.js_.
-* **_Jsonwebtoken_**: **Token** que envía datos entre aplicaciones o servicios y garantiza que sean válidos y seguros.
-* **_Body-parser_**: 
+* **_Jsonwebtoken_**: _Token_ que envía datos entre aplicaciones o servicios y garantiza que sean válidos y seguros.
+* **_Body-parser_**: Extrae el cuerpo de una solicitud de entrada.
 
 ## Componentes del grupo.
 ### Grupo E06.
