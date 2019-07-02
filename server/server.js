@@ -17,10 +17,6 @@ app.get(/.*/, function (req, res) {
 	res.sendFile(path.join(__dirname, '/dist'));
 })
 
-<<<<<<< HEAD
-=======
-// mongoose.connect('mongodb://asa:sytw19@ds239157.mlab.com:39157/mevn-proyecto', {
->>>>>>> 8a0a4b06dd664ba72d98ee43e7dc0f67e3ca9236
 mongoose.connect('mongodb://localhost/mevn-proyecto', {
 
 		useNewUrlParser: true

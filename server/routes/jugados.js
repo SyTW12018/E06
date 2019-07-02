@@ -6,19 +6,11 @@ const bcrypt = require('bcrypt');
 
 
 const Jugados = require('../models/Jugados');
-<<<<<<< HEAD
-=======
-const Juegos = require('../models/Juego');
->>>>>>> 8a0a4b06dd664ba72d98ee43e7dc0f67e3ca9236
 
 jugados.use(cors());
 
 process.env.SECRET_KEY = 'secret'
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8a0a4b06dd664ba72d98ee43e7dc0f67e3ca9236
 jugados.route('/:id').get(function (req, res) {
     let id = req.params.id;
     Jugados.findById(id, function (err, juego) {
@@ -77,41 +69,6 @@ jugados.post('/consulta', (req, res) => {
         })
 })
 
-<<<<<<< HEAD
-=======
-
-jugados.post('/recomendados', (req, res) => {
-    var usuario = req.body.email;
-    var vals;
-    var array = [];
-
-    Jugados.find({
-            usuario: usuario
-        },
-        function (err, result) {
-            if (err) throw err;
-            else vals = result;
-            for (i = 0; i < vals.length; i++) {
-                array.push(vals[i].titulo);
-            }
-            Juegos.find({
-                    titulo: {
-                        $nin: array
-                    }
-                },
-                function (err, resultado) {
-                    if (err) {
-                        res.json(err);
-                    } else {
-                        res.json(resultado);
-                    }
-                });
-        });
-});
-
-
-
->>>>>>> 8a0a4b06dd664ba72d98ee43e7dc0f67e3ca9236
 // Añade el juego como jugado
 jugados.post('/add', (req, res) => {
     const today = new Date()
