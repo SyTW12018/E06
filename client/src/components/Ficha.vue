@@ -15,6 +15,10 @@
                   <th scope="row">Fecha de lanzamiento:</th>
                   <td>{{juego.fecha}}</td>
                 </tr>
+                <tr>
+                  <th scope="row">Imagen:</th>
+                  <td>{{juego.imagen}}</td>
+                </tr>
               </tbody>
             </table>
             <div v-if="!jugado" class="text-center">
@@ -36,7 +40,7 @@
         <div class="card mt-">
           <div class="centrado">
             <div class="card-body fichajuego">
-              <img class="card-img-top rounded-top" src="../img/download.jpg" alt="Card image cap">
+              <img class="card-img-top rounded-top" src= "../img/GTA5.jpg" alt="Card image cap">
               <div class="caption rounded-bottom">
                 <h5>{{juego.rate}}</h5>
               </div>
@@ -103,6 +107,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import jwtDecode from "jwt-decode";
@@ -181,6 +186,7 @@ export default {
           console.log(err);
         });
     },
+<<<<<<< HEAD
     enviar() {
       const token = localStorage.usertoken;
       const decoded = jwtDecode(token);
@@ -212,6 +218,8 @@ export default {
           console.log(err);
         });
     }
+=======
+>>>>>>> ayrton
   }
 };
 </script>
@@ -273,6 +281,7 @@ tbody > tr > td {
   font-size: 1.1em;
   text-transform: capitalize;
 }
+
 
 .card-group.col-lg-12 > .largo {
   flex-grow: 3;
