@@ -13,25 +13,25 @@
         <option style="background-color: lightgrey; color: grey;" value>Eliminar filtros</option>
       </select>
     </div>
-
-    <div v-for="juego in juegosFiltro" :key="juego._id" class="card fichajuego">
-      <img src="../img/download.jpg" class="card-img-top">
-      <!-- <img :src="juego.foto"> -->
-      <div class="card-body">
-        <h4 class="card-title">
-          <b>{{ juego.titulo }}</b>
-        </h4>
-        <h6 class="card-text">
-          <b>Categoría:</b>
-          {{ juego.categoria }}
-        </h6>
-        <p class="card-text"></p>
-        <div class="text-center">
-          <router-link
-            class="nav-link btn"
-            tag="button"
-            :to="{ name: 'ficha', params: {id: juego._id } }"
-          >Ver Ficha</router-link>
+    <div class="contenedor">
+      <div v-for="juego in juegosFiltro" :key="juego._id" class="card fichajuego mb-3">
+        <img src="../img/download.jpg" class="card-img-top">
+        <!-- <img :src="juego.foto"> -->
+        <div class="card-body">
+          <h4 class="card-title">
+            <b>{{ juego.titulo }}</b>
+          </h4>
+          <h6 class="card-text">
+            <b style="font-weight: normal">{{ juego.categoria }}</b>
+          </h6>
+          <p class="card-text"></p>
+          <div class="text-center">
+            <router-link
+              class="nav-link btn"
+              tag="button"
+              :to="{ name: 'ficha', params: {id: juego._id } }"
+            >Ver Ficha</router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -78,6 +78,14 @@ export default {
 
 
 <style>
+.contenedor {
+  width: 100%;
+  text-align: center;
+}
+.row > .col-lg-9.col-md-6.col-xs-6 {
+  font-family: "Bangers", cursive;
+  font-size: 3em;
+}
 .text-center {
   text-align: center;
 }
@@ -126,6 +134,10 @@ export default {
   width: 240px;
   margin: 10px;
   display: inline-block;
+}
+
+.card {
+  display: block-inline;
 }
 
 .card-body > .card-title {

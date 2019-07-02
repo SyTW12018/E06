@@ -1,29 +1,30 @@
 <template>
   <div class="container">
-    <div class="jumbotron mt-5">
-      <div class="col-sm-8 mx-auto">
-        <h1 class="text-center">Perfil de usuario</h1>
-      </div>
-      <table class="table col-md-6 mx-auto">
-        <tbody>
-          <tr>
-            <td>Nombre</td>
-            <td v-if="first_name">{{first_name}}</td>
-          </tr>
-          <tr>
-            <td>Apellidos</td>
-            <td>{{last_name}}</td>
-          </tr>
-          <tr>
-            <td>Correo electrónico</td>
-            <td>{{email}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="col-sm-8 mx-auto mt-5 mb-3">
-        <h1 class="text-center">Juegos que has jugado</h1>
-      </div>
-      <div v-for="juego in juegos" :key="juego._id" class="card fichajuego">
+    <!-- <div class="jumbotron mt-5"> -->
+    <div class="col-sm-8 mt-5 mx-auto">
+      <h1 class="text-center">Perfil de usuario</h1>
+    </div>
+    <table class="table col-md-6 mx-auto">
+      <tbody>
+        <tr>
+          <td>Nombre</td>
+          <td v-if="first_name">{{first_name}}</td>
+        </tr>
+        <tr>
+          <td>Apellidos</td>
+          <td>{{last_name}}</td>
+        </tr>
+        <tr>
+          <td>Correo electrónico</td>
+          <td>{{email}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="col-sm-8 mx-auto mt-5 mb-3">
+      <h1 class="text-center">Juegos que has jugado</h1>
+    </div>
+    <div class="contenedor">
+      <div v-for="juego in juegos" :key="juego._id" class="card fichajuego mb-3">
         <img src="../img/download.jpg" class="card-img-top">
         <!-- <img :src="juego.foto"> -->
         <div class="card-body">
@@ -31,8 +32,7 @@
             <b>{{ juego.titulo }}</b>
           </h4>
           <h6 class="card-text">
-            <b>Categoría:</b>
-            {{ juego.categoria }}
+            <b style="font-weight: normal">{{ juego.categoria }}</b>
           </h6>
           <!-- <p>{{juego._id}}</p> -->
 
@@ -48,6 +48,7 @@
       </div>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -88,6 +89,19 @@ export default {
 
 
 <style>
+.contenedor {
+  width: 100%;
+  text-align: center;
+}
+.fichajuego {
+  width: 240px;
+  margin: 10px;
+  display: inline-block;
+}
+.col-sm-8.mx-auto > h1 {
+  font-family: "Bangers", cursive;
+  font-size: 2.5em;
+}
 .jumbotron .mt-5 > .card {
   width: 240px;
   margin: 10px;
