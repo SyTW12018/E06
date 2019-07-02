@@ -36,7 +36,7 @@
         <div class="card mt-5">
           <div class="centrado">
             <div class="card-body fichajuego">
-              <img class="card-img-top rounded-top" src="../img/download.jpg" alt="Card image cap">
+              <img class="card-img-top rounded-top" src="../img/GTA5.jpg" alt="Card image cap">
               <div class="caption rounded-bottom">
                 <h5>{{juego.rate}}</h5>
               </div>

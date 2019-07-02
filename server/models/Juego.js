@@ -12,6 +12,10 @@ const JuegoSchema = new Schema({
     fecha: {
         type: String,
         required: true
+    },
+    imagen: {
+        type: String,
+        required: true
     }
 })
 
