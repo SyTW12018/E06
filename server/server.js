@@ -34,13 +34,6 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }))
 
-//Routes
-app.use('/users', require('./routes/users.js'));
-app.use('/juegos', require('./routes/juegos.js'));
-app.use('/jugados', require('./routes/jugados.js'));
-app.use('/comentarios', require('./routes/comentarios.js'));
-
-
 
 //Static files
 
