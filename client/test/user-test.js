@@ -22,6 +22,7 @@ describe('Usuarios', () => {
     User.deleteMany({}, (err) => {
       done();
     });
+    done();
   });
 
   describe('POST REGISTRO', function () {
