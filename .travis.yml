@@ -1,7 +1,14 @@
+dist: trusty
 language: node_js
 
 node_js: 
   - '6'
+
+addons:
+  sonarcloud:
+    organization: "sytw12018"
+    token:
+      secure: "**************************" # encrypted value of your token
 
 script:
   - npm build
