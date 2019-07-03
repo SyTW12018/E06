@@ -6,6 +6,7 @@
   "dependencies": {
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
+    "build": "^0.1.4",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
@@ -27,7 +28,7 @@
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "sonar": "node sonar-project.js",
-    "test": "cd client && npm run build && mocha --exit"
+    "test": "cd client && mocha --exit"
   },
   "author": "",
   "license": "ISC"
