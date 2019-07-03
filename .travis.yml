@@ -1,12 +1,16 @@
+dist: trusty
 language: node_js
 
 node_js: 
   - '6'
 
 addons:
-  sonarcloud: true
+  sonarcloud:
+    organization: "sytw12018"
+    token:
+      secure: "**************************" # encrypted value of your token
 
 script:
   - npm build
   - npm test
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=SyTW12018 -Dsonar.projectKey=E06 -Dsonar.sources='E06/server' -X
+  - sonar-scanner 
