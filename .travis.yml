@@ -4,18 +4,17 @@ language: node_js
 node_js: 
   - '6'
 
-# addons:
-#   sonarcloud:
-#     organization: "sytw12018"
-#     token:
-#       secure: "**************************" # encrypted value of your token
+addons:
+  sonarcloud:
+    organization: "sytw12018"
+    token:
+      secure: "" # encrypted value of your token
 
 script:
   - npm build
   - npm test
 
 services: mongodb
-
 
 notifications:
     on_success: always
