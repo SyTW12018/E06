@@ -54,11 +54,7 @@ export default {
   },
   created() {
     let uri = "/juegos";
-<<<<<<< HEAD
-    
-=======
-  
->>>>>>> ayrton
+
     this.axios.get(uri).then(response => {
       this.juegos = response.data;
     });
