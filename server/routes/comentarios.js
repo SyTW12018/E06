@@ -35,14 +35,11 @@ comentarios.route('/enviar').post(function (req, res) {
     }
     Comentario.create(coment)
         .then(comentario => {
-            console.log("no error");
             res.json({
                 status: 'Comentario enviado'
             })
         })
         .catch(err => {
-            // console.log(" error");
-            // console.log(err);
             res.send('error: ' + err)
         })
 });

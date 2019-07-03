@@ -15,10 +15,6 @@ const JugadosSchema = new Schema({
     fecha: {
         type: String,
         required: true
-    },
-    dia: {
-        type: Date,
-        default: Date.now
     }
 })
 

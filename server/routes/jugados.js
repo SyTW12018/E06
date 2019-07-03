@@ -111,14 +111,12 @@ jugados.post('/add', (req, res) => {
         titulo: req.body.titulo,
         categoria: req.body.categoria,
         fecha: req.body.fecha,
-        dia: today
     }
     Jugados.findOne({
             usuario: req.body.email,
             titulo: req.body.titulo,
             categoria: req.body.categoria,
             fecha: req.body.fecha,
-            dia: today
         })
         .then(user => {
             if (!user) {

@@ -20,10 +20,10 @@ app.get(/.*/, function (req, res) {
 // mongoose.connect('mongodb://asa:sytw19@ds239157.mlab.com:39157/mevn-proyecto', {
 mongoose.connect('mongodb://localhost/mevn-proyecto', {
 
-		useNewUrlParser: true
-	})
-	.then(db => console.log('DB is connected'))
-	.catch(err => console.error(err));
+	useNewUrlParser: true
+})
+// .then(db => console.log('DB is connected'))
+// .catch(err => console.error(err));
 
 //Settings
 app.set('port', process.env.PORT || 5000);
