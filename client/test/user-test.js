@@ -24,7 +24,8 @@ describe('Usuarios', () => {
     });
   });
 
-  describe('POST REGISTRO', () => {
+  describe('POST REGISTRO', function () {
+    this.timeout(0);
     it('Debería registrar un usuario', (done) => {
 
       chai.request(server)
@@ -51,7 +52,8 @@ describe('Usuarios', () => {
   });
 
 
-  describe('POST LOGIN', () => {
+  describe('POST LOGIN', function () {
+    this.timeout(0)
     it('Debería iniciar sesión con un usuario', (done) => {
       chai.request(server)
         .post('/users/login')
