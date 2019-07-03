@@ -1,4 +1,5 @@
-﻿process.env.NODE_ENV = 'test';
+process.env.NODE_ENV = 'test';
+
 
 let mongoose = require("mongoose")
 let Juego = require('../../server/models/Juego.js');
