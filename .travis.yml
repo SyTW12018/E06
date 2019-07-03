@@ -4,13 +4,21 @@ language: node_js
 node_js: 
   - '6'
 
-addons:
-  sonarcloud:
-    organization: "sytw12018"
-    token:
-      secure: "**************************" # encrypted value of your token
+# addons:
+#   sonarcloud:
+#     organization: "sytw12018"
+#     token:
+#       secure: "**************************" # encrypted value of your token
 
 script:
   - npm build
   - npm test
-  - sonar-scanner 
+
+services: mongodb
+
+
+notifications:
+    on_success: always
+    slack: 
+      rooms:
+        secure: "Y2umfVS2tPmJmXVesE/rGtWyH+DhzhH33C1aFpk/nvmhmfo5FkWQRSjF0HoZwm4xaVZpiNqGXsJ6YaYxMq1u/85iE/aehMuoXj3zdvPV/f08jp1Fzh0XdA46NPhxvIofmHfeGbr3ylPSxX5n5JkzpDVeS7Ej7Sr5j1F7ISSuERs/as3vp1Xg4B+bj6S8zBoY/HMGaXiY3cH5wO6ycWjmRLArIPySW12ahW8qiR1tsWWCE+Iuaw83wfuV/Qn1tc0eah+Ao2S4o01Dci2aFSTPu3GL/p+Xjnbna+H93Pk5j8nEfaVIjKwhnHX3M2sWAMDLl+bbxPQLFnjTdtDqpLyDNGkQr8dZOJxDOTkINLel3R0HZhCcRy5zmY6yJ1VjYK7GEsuCzTHg8lMDnri6v3LqI1mSxkdIxtetNn71bKjHtYTHggglcdoCheTlRWwBwSE8VOR7lj4qeJMquoD8cGj6BOTuiBLBVbnCoQqndRgkQaV+ZNUoMd7Vm2/iMYf3M/vwpYiNlX6xd6Wq6DP76e0YszzXZ+p6ylsQ6jiy0aG0pIvQJ0yQcUHJZIoeDTJjAZ+FTzGWWQtDn/zS8xPO46Sw3skjg+ahkoV+wnpa+n9X+huyXmiO8DGzX1HRU5tM8j6drBkvRqQ1WxqzUjo+h6Rr3laTrxhIpSSJsWRECr4Rhwg="
