@@ -11,18 +11,7 @@ let should = chai.should();
 chai.use(chaiHttp);
 
 describe('Juegos', () => {
-  describe('GET Juegos', () => {
-    it('Debería obtener todos los juegos', (done) => {
-      chai.request(server)
-        .get('/juegos')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('array');
-          res.body.length.should.not.be.eql(0);
-          done();
-        });
-    });
-  });
+
 
   describe(' GET Juego por ID', () => {
     it('Debería obtener un solo juego', (done) => {
@@ -43,6 +32,20 @@ describe('Juegos', () => {
           res.body.should.have.property('categoria');
           res.body.should.have.property('fecha');
           res.body.should.have.property('_id').eql(juego.id);
+          done();
+        });
+    });
+  });
+
+  describe('GET Juegos', () => {
+    it('Debería obtener todos los juegos', (done) => {
+
+      chai.request(server)
+        .get('/juegos')
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('array');
+          res.body.length.should.not.be.eql(0);
           done();
         });
     });
