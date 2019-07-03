@@ -15,13 +15,7 @@ describe('Juegos', () => {
   describe('GET Juegos', function () {
     this.timeout(0);
     it('Debería obtener todos los juegos', (done) => {
-      let juego = new Juego({
-        titulo: "Bioshock",
-        categoria: "acción",
-        fecha: "2007",
-        imagen: "imagen.png"
-      });
-      juego.save();
+
       chai.request(server)
         .get('/juegos')
         .end((err, res) => {
