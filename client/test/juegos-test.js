@@ -10,7 +10,6 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-
 describe('Juegos', () => {
   describe('GET Juegos', () => {
     it('Debería obtener todos los juegos', (done) => {

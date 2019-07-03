@@ -25,9 +25,7 @@ describe('Usuarios', () => {
   });
 
   describe('POST REGISTRO', function () {
-    before(function () {
-      this.timeout(1000) // 10 second timeout for setup
-    })
+
     it('Debería registrar un usuario', (done) => {
 
       chai.request(server)
