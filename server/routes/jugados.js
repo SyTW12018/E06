@@ -6,12 +6,10 @@ const bcrypt = require('bcrypt');
 
 
 const Jugados = require('../models/Jugados');
-const Juegos = require('../models/Juego');
 
 jugados.use(cors());
 
 process.env.SECRET_KEY = 'secret'
-
 
 jugados.route('/:id').get(function (req, res) {
     let id = req.params.id;
@@ -70,38 +68,6 @@ jugados.post('/consulta', (req, res) => {
             res.send('error: ' + err)
         })
 })
-
-
-jugados.post('/recomendados', (req, res) => {
-    var usuario = req.body.email;
-    var vals;
-    var array = [];
-
-    Jugados.find({
-            usuario: usuario
-        },
-        function (err, result) {
-            if (err) throw err;
-            else vals = result;
-            for (i = 0; i < vals.length; i++) {
-                array.push(vals[i].titulo);
-            }
-            Juegos.find({
-                    titulo: {
-                        $nin: array
-                    }
-                },
-                function (err, resultado) {
-                    if (err) {
-                        res.json(err);
-                    } else {
-                        res.json(resultado);
-                    }
-                });
-        });
-});
-
-
 
 // Añade el juego como jugado
 jugados.post('/add', (req, res) => {

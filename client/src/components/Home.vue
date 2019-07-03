@@ -8,7 +8,7 @@
     <div class="subtitulo">
       <h2
         class="text-white"
-      >Bienvenid@ al mejor portal donde descubrir nuevos títulos a los que jugar!</h2>
+      >¡Bienvenid@ al mejor portal donde descubrir nuevos títulos a los que jugar!</h2>
     </div>
     <div class="container">
       <div class="row">
