@@ -36,6 +36,7 @@ app.use(bodyParser.urlencoded({
 
 //Routes
 app.use('/users', require('./routes/users.js'));
+app.use('/juegos', require('./routes/juegos.js'));
 
 //Server is listening 
 const server = app.listen(app.get('port'), () => {
