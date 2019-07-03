@@ -34,8 +34,8 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }))
 
-
-//Static files
+//Routes
+app.use('/users', require('./routes/users.js'));
 
 //Server is listening 
 const server = app.listen(app.get('port'), () => {
