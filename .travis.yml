@@ -1,12 +1,7 @@
 language: node_js
 node_js: 
   - '6'
-
-dist: trusty
-
-notifications:
-  slack: sytw:V3U1QY6Dyevgv3Er9YEkxMO6
-
+  
 script:
   - npm test
   
