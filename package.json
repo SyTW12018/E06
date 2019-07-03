@@ -27,7 +27,7 @@
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "sonar": "node sonar-project.js",
-    "test": "cd client && mocha --exit"
+    "test": "cd client && npm run build && mocha --exit"
   },
   "author": "",
   "license": "ISC"
