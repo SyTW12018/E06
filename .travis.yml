@@ -1,8 +1,24 @@
+dist: trusty
 language: node_js
 
 node_js: 
   - '6'
 
+# addons:
+#   sonarcloud:
+#     organization: "sytw12018"
+#     token:
+#       secure: "dlf6NNONb5DTLyOVffvWOShYO9gX7pf3eXuu8rJ92DEcUeY8Ogn0wgMp0DlP8B/2mGtZqrxvbqs8T9QLRxmEP3iYpNV4L/12k4F5Q2vfsQ3EDFJAQwqacqAJqJCwS5DGpR43uDfxzHftOhEhoVVHKTMnXSGQo6I0GF1dqArlfz/+vHQnBlylPrIwtSvoxX+uKl3iRovB3u1mC1t9SBBe+9QUvUFPlrpHVxcaV1OCUhPNualsSb0/eel8Vo1EXa4i0ropX9CfhqIW/RSDwAiQeTMQH5pnQeP6p6LANuplNrAfhXn0CtYVSbh3UaXo7A8ZIHd4xJy5uQHiiDdVcWTUEXhG9mJuikvTSv16qElygEVQrowJrIFxzpRsLRWU0fCKMF2PQAeDzFysGmUASuWOhDVisREzpaPOFLb+KqiiLAFgqbkL9XuH/8DnQzRjY8bVqCozUyV7VegnJSBgd26RWZAY9Qq0veKtbEqtILhNqKLZ0C4W8CPedMiWTFOGSHGlz+gGXPoD6CYNIPsqN8AyCJwk0R0HesdXuqwjo31IrG78JRH69ARUetbId0go20yG7t3Hq3Mng9/NHut2ulTjiLl1+DyvgKdbZGAs9jmZ61Jn/lDIGT8q6B9OOkdPRxAmi07oQPe5AYmCmJ+f9H8ZGzwgZPZpTcyq5XqWtgq4B8M="
+
 script:
+  - npm build
   - npm test
-  
+  # - sonar-scanner
+
+services: mongodb
+
+notifications:
+    on_success: always
+    slack: 
+      rooms:
+        secure: "Y2umfVS2tPmJmXVesE/rGtWyH+DhzhH33C1aFpk/nvmhmfo5FkWQRSjF0HoZwm4xaVZpiNqGXsJ6YaYxMq1u/85iE/aehMuoXj3zdvPV/f08jp1Fzh0XdA46NPhxvIofmHfeGbr3ylPSxX5n5JkzpDVeS7Ej7Sr5j1F7ISSuERs/as3vp1Xg4B+bj6S8zBoY/HMGaXiY3cH5wO6ycWjmRLArIPySW12ahW8qiR1tsWWCE+Iuaw83wfuV/Qn1tc0eah+Ao2S4o01Dci2aFSTPu3GL/p+Xjnbna+H93Pk5j8nEfaVIjKwhnHX3M2sWAMDLl+bbxPQLFnjTdtDqpLyDNGkQr8dZOJxDOTkINLel3R0HZhCcRy5zmY6yJ1VjYK7GEsuCzTHg8lMDnri6v3LqI1mSxkdIxtetNn71bKjHtYTHggglcdoCheTlRWwBwSE8VOR7lj4qeJMquoD8cGj6BOTuiBLBVbnCoQqndRgkQaV+ZNUoMd7Vm2/iMYf3M/vwpYiNlX6xd6Wq6DP76e0YszzXZ+p6ylsQ6jiy0aG0pIvQJ0yQcUHJZIoeDTJjAZ+FTzGWWQtDn/zS8xPO46Sw3skjg+ahkoV+wnpa+n9X+huyXmiO8DGzX1HRU5tM8j6drBkvRqQ1WxqzUjo+h6Rr3laTrxhIpSSJsWRECr4Rhwg="
