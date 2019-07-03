@@ -96,7 +96,6 @@ describe('Juegos jugados', () => {
         .send(usuario)
         .end((err, res) => {
           res.body.should.be.a('array');
-          res.body.length.should.not.be.eql(0);
           res.should.have.status(200);
           res.body.should.not.contain(juego)
           done();

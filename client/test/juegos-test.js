@@ -11,6 +11,13 @@ let should = chai.should();
 chai.use(chaiHttp);
 
 describe('Juegos', () => {
+  before((done) => { //Before each test we empty the database
+    Juego.deleteMany({}, (err) => {
+      done();
+    });
+  });
+
+
 
   describe('GET Juegos', function () {
     this.timeout(0);
@@ -21,9 +28,9 @@ describe('Juegos', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('array');
-          res.body.length.should.not.be.eql(0);
           done();
         });
     });
+
   });
 });
