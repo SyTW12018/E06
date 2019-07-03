@@ -19,4 +19,6 @@ services: mongodb
 
 notifications:
   slack:
-    rooms: sytw:V3U1QY6Dyevgv3Er9YEkxMO6#e06      
+    rooms: sytw:V3U1QY6Dyevgv3Er9YEkxMO6#e06 
+    on_success: always
+
