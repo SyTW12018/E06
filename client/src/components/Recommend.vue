@@ -5,7 +5,7 @@
     </div>
     <div class="contenedor">
       <div v-for="juego in juegos" :key="juego._id" class="card fichajuego">
-        <img src="../img/download.jpg" class="card-img-top">
+        <img src="../img/favicon.png" class="card-img-top">
         <!-- <img :src="juego.foto"> -->
         <div class="card-body">
           <h4 class="card-title">
