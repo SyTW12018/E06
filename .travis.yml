@@ -18,6 +18,5 @@ services: mongodb
 
 
 notifications:
-  slack:
     on_success: always
 
