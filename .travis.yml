@@ -8,11 +8,12 @@ addons:
   sonarcloud:
     organization: "sytw12018"
     token:
-      secure: "" # encrypted value of your token
+      secure: "SGbamgCznXqzN+XDB8EaLlV60BLpD3KLGwSEP8wKT6Imt6isM0Q1sMxOaOjkMUjdykoNLLz6bOEPcVJstm5/+I5iJfO4mQIjU62byRihDv41f4Q6rnhXv0wCg7lVVeKHQhfVWkkKAD6VGqfUBxz1iaeBv/hoVnCHTIr01QopGyz06xCeORQBcZjHAX6FkXeWsyIKSoahTb59jWjcqDn7NMQKGCReDrzv6a1mauKoJmHette57uNJVDT0CjW2fODYQI6tYz8JubOHefbby9DvcOlo/tZy7UxeOYuZrlzvTehB8ipCVWHlcAXZ35sYxA7jaxAZrSWypcKI6/w+MzIDQRUJ/7lO8HdWJ3Q6PxHIhMhxhH1SJTwwB6J1uovp9F6gZ91JNcK+g4EhuRNYc+PwhIyzSDZIcqUlYb131bbE8fq8QH8Q6/XIaZSQK+/O+GpnLRoC7yAR0t03MsuVocgjS5/mbuzBOo8IvO8r7qmAPWpdKtW1jaZTSPbL6lNkYkkIqQ4dHplTFC6Iv+qD1cV/vgvwORQP2pUeliPAxS2MC1bFggqY/0Aye8IuliuuAu64yp4GUgjiqQcHTjsjsPScN8q6Wq3uoyCfWqrHySjtFAFVzMZxhFgHC4mQ/j0hBMvdHKs/XuPfwyXxTVNchycOTRpX73+gWpYSa/LmFRDgW/k="
 
 script:
   - npm build
   - npm test
+  - sonar-scanner
 
 services: mongodb
 
