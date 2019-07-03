@@ -77,4 +77,4 @@ client/*.njsproj
 client/*.sln
 
 
-# server/dist/
+server/dist/
